@@ -21,7 +21,13 @@ $(document).ready(function () {
     console.log('After .ajax');
   });
 
-
+  $('#step3456').on('click', function() {
+    $.ajax({
+    url:'http://first-ajax-api.herokuapp.com/ping',
+    method: 'GET',
+    dataType: 'html',
+    })
+  })
 
 
 });
