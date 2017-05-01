@@ -13,7 +13,7 @@ $(document).ready(function () {
 
   $('#step3456').on('click', function() {
     $.ajax({
-    url:'http://first-ajax-api.herokuapp.com/pong',
+    url:'http://first-ajax-api.herokuapp.com/ping',
     method: 'GET',
     dataType: 'html',
     }).done(function(data) {
@@ -25,4 +25,21 @@ $(document).ready(function () {
       console.log('Hey the request finished!');
     });
   });
+
+  $('#step7').on('click', function() {
+    $.ajax({
+    url:'http://first-ajax-api.herokuapp.com/count',
+    method: 'GET',
+    dataType: 'html',
+    }).done(function(data) {
+      console.log('.ajax done');
+      $('#step7').append('<p>' + data + '</p>' );
+    }).fail(function() {
+      $('#step7').append('<p> ERROR: Could not connect to Pong </p>');
+    }).always(function() {
+      console.log('Hey the request finished!');
+    });
+  });
+
+
 });
