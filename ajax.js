@@ -41,5 +41,21 @@ $(document).ready(function () {
     });
   });
 
+  $('#step8').on('click', function() {
+    $.ajax({
+    url:'http://first-ajax-api.herokuapp.com/time',
+    method: 'GET',
+    dataType: 'html',
+    data: {timezone: 'Asia/Kolkata'}
+    }).done(function(data) {
+      console.log('.ajax done');
+      $('#step8').append('<p>' + data + '</p>' );
+    }).fail(function() {
+      $('#step8').append({url:'http://first-ajax-api.herokuapp.com/pong'});
+    }).always(function() {
+      console.log('Hey the request finished!');
+    });
+  });
+
 
 });
