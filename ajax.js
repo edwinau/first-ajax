@@ -19,15 +19,11 @@ $(document).ready(function () {
     }).done(function(data) {
       console.log('.ajax done');
       $('#step3456').append('<p>' + data + '</p>' );
-    }).fail(function(jqXHR, textStatus) {
-      console.log('.ajax FAILED with ' + jqXHR.status + ' ' + jqXHR.statusText);
-      console.log(jqXHR);
+    }).fail(function() {
+      $('#step3456').append('ERROR: Could not connect to Pong');
     }).always(function() {
-      console.log('.ajax request finished');
+      $('#step3456').append('Operation complete');
     });
-
-    console.log('After .ajax');
-  })
-
-
+    console.log('Hey the request finished!');
+  });
 });
