@@ -13,17 +13,16 @@ $(document).ready(function () {
 
   $('#step3456').on('click', function() {
     $.ajax({
-    url:'http://first-ajax-api.herokuapp.com/ping',
+    url:'http://first-ajax-api.herokuapp.com/pong',
     method: 'GET',
     dataType: 'html',
     }).done(function(data) {
       console.log('.ajax done');
       $('#step3456').append('<p>' + data + '</p>' );
     }).fail(function() {
-      $('#step3456').append('ERROR: Could not connect to Pong');
+      $('#step3456').append('<p> ERROR: Could not connect to Pong </p>');
     }).always(function() {
-      $('#step3456').append('Operation complete');
+      console.log('Hey the request finished!');
     });
-    console.log('Hey the request finished!');
   });
 });
